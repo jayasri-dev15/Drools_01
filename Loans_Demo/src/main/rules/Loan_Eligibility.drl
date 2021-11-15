@@ -1,0 +1,29 @@
+//created on: 15 Nov, 2021
+package com.sample
+
+//list any import classes here.
+
+
+
+//declare any global variables here
+
+
+
+
+rule "Based on Nationality"
+salience 100
+    when
+        $c:Customer_Info( Nationality == "Indian");
+    then
+        System.out.println("Hi "+$c.getName()+" being an Indian residence you are eligible to apply for loan");
+
+end
+
+rule "Based on Non - Nationality"
+salience 99
+    when
+        $c:Customer_Info( Nationality != "Indian");
+    then
+        System.out.println("Hi "+$c.getName()+" you are not eligible to apply for loan via Online. Approach the nearest Office");
+
+end

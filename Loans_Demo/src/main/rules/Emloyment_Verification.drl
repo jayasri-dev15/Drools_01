@@ -1,0 +1,30 @@
+//created on: 15 Nov, 2021
+package com.sample
+
+//list any import classes here.
+
+
+
+//declare any global variables here
+
+
+
+
+rule "If customer is Indian and working person check with employment category"
+salience 98
+    when
+        $c:Customer_Info( Nationality == "Indian") and Customer_Info ( IsworkingPerson == true );
+        
+    then
+        System.out.println("Nationality and working status checked for "+$c.getName()+". Please mention your employment category ");
+
+end
+
+rule "If customer is Indian and not a working person check with employment category"
+salience 97
+    when
+        $c:Customer_Info( Nationality == "Indian") and Customer_Info ( IsworkingPerson == false );
+    then
+        System.out.println("Not yet meet the expectations.Visit our nearby office");
+
+end

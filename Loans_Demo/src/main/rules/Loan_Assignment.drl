@@ -1,0 +1,26 @@
+//created on: 15 Nov, 2021
+package com.sample
+
+//list any import classes here.
+
+
+
+//declare any global variables here
+
+rule "Loan availabilities"
+
+    when
+        $c:Customer_Info( income >=55000 && Nationality != "Indian" && IsworkingPerson == false)
+    then
+        System.out.println("You are eligible to apply for "+$c.getLoan_Types()+" loan");
+
+end
+
+rule "Loan availabilities for lesser income"
+
+    when
+        $c:Customer_Info( income <55000 ) 
+    then
+        System.out.println("Kindly visit our office");
+
+end
