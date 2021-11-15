@@ -1,4 +1,4 @@
-package com.sample; //customer details
+package com.sample; 
 
 public class Customer_Info 
 
